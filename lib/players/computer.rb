@@ -23,7 +23,7 @@ module Players
     end
     
     def other_player_token
-      if self.token
+      self.token == "X" ? "O" : "X"
     end
     
   end
