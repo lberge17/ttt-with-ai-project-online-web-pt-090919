@@ -64,7 +64,7 @@ module Players
     
     def
     
-    def self.other_player_token
+    def other_player_token
       self.token == "X" ? "O" : "X"
     end
     
