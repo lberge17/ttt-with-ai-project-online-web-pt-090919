@@ -48,11 +48,10 @@ class Game
     
     def turn
       input = @player_1.move(@board)
-      if @board.valid_move?(input)
-        @board.update(input, current_player)
-      else
-        turn
+      until @board.valid_move?(input)
+        input = @player_1.move(@board)
       end
+      @board.update(input, current_player)
     end
     
     
