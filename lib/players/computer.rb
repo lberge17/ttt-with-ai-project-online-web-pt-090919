@@ -1,5 +1,5 @@
 module Players
-  class Computer
+  class Computer < Player
     def move(board)
       n = "5"
       until board.valid_move?(n) do
