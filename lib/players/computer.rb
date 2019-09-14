@@ -38,7 +38,7 @@ module Players
     end
     
     def move(board)
-      sleep 1 -- can't be used in wargames mode
+      sleep 1  #can't be used in wargames mode
       n = nil
       if !!winning_move?(board)
         n = winning_move?(board)
