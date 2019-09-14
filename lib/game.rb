@@ -57,7 +57,6 @@ class Game
     def play
       until over? do
         turn
-        sleep 1
         @board.display
       end
       if won?
