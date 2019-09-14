@@ -77,6 +77,7 @@ class Game
         end
         i += 1
       end
+      puts "The computer won #{count} out of 100 games."
     end
     
     def self.computer_game
@@ -122,6 +123,7 @@ class Game
           self.two_player
         elsif input == "wargames"
           game = Game.new(Players::Human.new("X"), player_2=Players::Human.new("O"), board=Board.new)
+          game.play_wargames
         elsif input == "exit"
           break
         else
