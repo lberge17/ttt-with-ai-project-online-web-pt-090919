@@ -66,6 +66,19 @@ class Game
       end
     end
     
+    def play_wargames
+      count = 0
+      until i = 100 do 
+        until over? do
+          turn
+        end
+        if won?
+          count += 1
+        end
+        i += 1
+      end
+    end
+    
     def self.computer_game
       game = Game.new(Players::Computer.new("X"), player_2=Players::Computer.new("O"), board=Board.new)
       game.play
