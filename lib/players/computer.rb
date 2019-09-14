@@ -37,7 +37,7 @@ module Players
     end
     
     def winning_move?(board)
-      winning_array = WIN_COMBINATIONS.find{|array| (board.cells[array[0]] == token && board.cells[array[1]] == token && board.cells[array[2]] == " ") || (board.cells[array[2]] == token && board.cells[array[1]] == token && board.cells[array[0]] == " ") || (board.cells[array[0]] == token && board.cells[array[2]] == token && board.cells[array[1]] == " ")}
+      winning_array = WIN_COMBINATIONS.find{|array| (board.cells[array[0]] == self.token && board.cells[array[1]] == self.token && board.cells[array[2]] == " ") || (board.cells[array[2]] == token && board.cells[array[1]] == self.token && board.cells[array[0]] == " ") || (board.cells[array[0]] == token && board.cells[array[2]] == self.token && board.cells[array[1]] == " ")}
       if !!winning_array
         winning_array.find{|index| board.cells[index] == " "}
       end
@@ -51,7 +51,7 @@ module Players
     end
     
     def other_player_token
-      token == "X" ? "O" : "X"
+      self.token == "X" ? "O" : "X"
     end
     
   end
