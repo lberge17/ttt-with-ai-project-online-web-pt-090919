@@ -32,7 +32,7 @@ module Players
         n = "7"
       else
         until board.valid_move?(n) do
-          n = rand(1, 9)
+          n = rand(1..9)
         end
       end
       n
