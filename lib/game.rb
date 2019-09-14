@@ -112,6 +112,15 @@ class Game
         else
           puts "Invalid input."
         end
+        puts "Would you like to play again? (y/n)"
+        input = gets.chomp
+        until input == "y" || input == "n" do
+          puts "invalid input. Type 'y' or 'n'"
+          input = gets.chomp
+        end
+        if input == "n"
+          break
+        end
       end
     end
     
