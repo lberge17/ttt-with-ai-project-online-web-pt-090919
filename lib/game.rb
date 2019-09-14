@@ -54,6 +54,14 @@ class Game
       @board.update(input, current_player)
     end
     
+    def turn_wargames
+      input = ""
+      until @board.valid_move?(input)
+        input = current_player.move_wargames(@board)
+      end
+      @board.update(input, current_player)
+    end
+    
     def play
       until over? do
         turn
@@ -70,7 +78,7 @@ class Game
       count = 0
       until i = 100 do 
         until over? do
-          turn
+          turn_wargames
         end
         if won?
           count += 1
