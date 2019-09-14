@@ -13,8 +13,32 @@ module Players
     [2, 4, 6]
     ]
     
+    def move_wargames(board)
+      n = nil
+      if !!winning_move?(board)
+        n = winning_move?(board)
+      elsif !!block_opponent_win?(board)
+        n = block_opponent_win?(board)
+      elsif board.cells[4] == " "
+        n = "5"
+      elsif board.cells[2] == " "
+        n = "3"
+      elsif board.cells[0] == " "
+        n = "1"
+      elsif board.cells[8] == " "
+        n = "9"
+      elsif board.cells[6] == " "
+        n = "7"
+      else
+        until board.valid_move?(n) do
+          n = rand(1..9)
+        end
+      end
+      n
+    end
+    
     def move(board)
-      #sleep 1 -- can't be used in wargames mode
+      sleep 1 -- can't be used in wargames mode
       n = nil
       if !!winning_move?(board)
         n = winning_move?(board)
