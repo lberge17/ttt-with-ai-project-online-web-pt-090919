@@ -57,11 +57,49 @@ class Game
     def play
       until over? do
         turn
+        @board.display
       end
       if won?
         puts "Congratulations #{winner}!"
       else
         puts "Cat's Game!"
+      end
+    end
+    
+    def self.computer_game
+      game = Game.new(Players::Computer.new("X"), player_2=Players::Computer.new("O"), board=Board.new)
+      game.play
+    end
+    
+    def self.one_player
+      game = Game.new()
+    end
+    
+    def self.two_player
+      game = Game.new(Players::Human.new("X"), player_2=Players::Human.new("O"), board=Board.new)
+      game.play
+    end
+    
+    def self.welcome
+      puts "Welcome to TicTacToe"
+      loop do 
+        puts "What kind of game would you like to play?"
+        puts "Enter '0' for computer v computer."
+        puts "Enter '1' for one player"
+        puts "Enter '2' for two player"
+        puts "Enter 'exit' to leave"
+        input = gets.chomp
+        if input == "0"
+          
+        elsif input == "1"
+          
+        elsif input == "2"
+          
+        elsif input == "exit"
+          break
+        else
+          puts "Invalid input."
+        end
       end
     end
     
