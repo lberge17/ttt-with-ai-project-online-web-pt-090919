@@ -72,7 +72,19 @@ class Game
     end
     
     def self.one_player
-      game = Game.new()
+      puts "If you would like to go first, enter '1'"
+      puts "If you would like to go second, enter '2'"
+      input = gets.chomp
+      if input == "1"
+        game = Game.new(Players::Human.new("X"), player_2=Players::Computer.new("O"), board=Board.new)
+        game.play
+      elsif input =="2"
+        game = Game.new(Players::Computer.new("X"), player_2=Players::Computer.new("O"), board=Board.new)
+        game.play
+      else
+        puts "Invalid input, please enter '1' or '2'"
+        self.one_player
+      end
     end
     
     def self.two_player
