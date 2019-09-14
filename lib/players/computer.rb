@@ -37,16 +37,10 @@ module Players
     end
     
     def winning_move?(board)
-      WIN_COMBINATIONS.each do |array|
-        if (board.cells[array[0]] == self.token) && (board.cells[array[1]] == self.token)
-          return (array[2] + 1).to_s
-        elsif (board.cells[array[1]] == self.token) && (board.cells[array[2]] == self.token)
-          return (array[2] + 1).to_s
-        elsif (board.cells[array[0]] == self.token) && (board.cells[array[2]] == self.token)
-          return (array[2] + 1).to_s
-        end
+      winning_array = WIN_COMBINATIONS.find{|array| (board.cells[array[0]] == token && board.cells[array[1]] == token && board.cells[array[2]] == " ") || (board.cells[array[2]] == token && board.cells[array[1]] == token && board.cells[array[0]] == " ") || (board.cells[array[0]] == token && board.cells[array[2]] == token && board.cells[array[1]] == " ")
+      if !!winning_array
+        winning_array.find{|index| board.cells[index] == " "
       end
-      false
     end
     
     def block_opponent_win?(board)
