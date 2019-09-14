@@ -119,6 +119,7 @@ class Game
           input = gets.chomp
         end
         if input == "n"
+          puts "Exiting game. Hope to see you again soon!"
           break
         end
       end
