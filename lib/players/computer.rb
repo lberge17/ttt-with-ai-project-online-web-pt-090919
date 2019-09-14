@@ -50,9 +50,9 @@ module Players
     end
     
     def block_opponent_win?(board)
-      winning_array = WIN_COMBINATIONS.find{|array| (board.cells[array[0]] == token && board.cells[array[1]] == token && board.cells[array[2]] == " ") || (board.cells[array[2]] == token && board.array[combo[1]] == token && board.cells[array[0]] == " ") || (board.cells[array[0]] == token && board.array[combo[2]] == token && board.cells[array[1]] == " ")
+      winning_array = WIN_COMBINATIONS.find{|array| (board.cells[array[0]] == token && board.cells[array[1]] == token && board.cells[array[2]] == " ") || (board.cells[array[2]] == token && board.cells[array[1]] == token && board.cells[array[0]] == " ") || (board.cells[array[0]] == token && board.cells[array[2]] == token && board.cells[array[1]] == " ")
       if !!winning_array
-        
+        winning_array.find{|index| board.cells[index] == " "
       end
     end
     
