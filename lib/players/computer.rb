@@ -39,19 +39,19 @@ module Players
     def winning_move?(board)
       winning_array = WIN_COMBINATIONS.find{|array| (board.cells[array[0]] == token && board.cells[array[1]] == token && board.cells[array[2]] == " ") || (board.cells[array[2]] == token && board.cells[array[1]] == token && board.cells[array[0]] == " ") || (board.cells[array[0]] == token && board.cells[array[2]] == token && board.cells[array[1]] == " ")
       if !!winning_array
-        winning_array.find{|index| board.cells[index] == " "
+        winning_array.find{|index| board.cells[index] == " "}
       end
     end
     
     def block_opponent_win?(board)
-      winning_array = WIN_COMBINATIONS.find{|array| (board.cells[array[0]] == token && board.cells[array[1]] == token && board.cells[array[2]] == " ") || (board.cells[array[2]] == token && board.cells[array[1]] == token && board.cells[array[0]] == " ") || (board.cells[array[0]] == token && board.cells[array[2]] == token && board.cells[array[1]] == " ")
+      winning_array = WIN_COMBINATIONS.find{|array| (board.cells[array[0]] == other_player_token && board.cells[array[1]] == other_player_token && board.cells[array[2]] == " ") || (board.cells[array[2]] == other_player_token && board.cells[array[1]] == other_player_token && board.cells[array[0]] == " ") || (board.cells[array[0]] == other_player_token && board.cells[array[2]] == other_player_token && board.cells[array[1]] == " ")
       if !!winning_array
-        winning_array.find{|index| board.cells[index] == " "
+        winning_array.find{|index| board.cells[index] == " "}
       end
     end
     
     def other_player_token
-      self.token == "X" ? "O" : "X"
+      token == "X" ? "O" : "X"
     end
     
   end
