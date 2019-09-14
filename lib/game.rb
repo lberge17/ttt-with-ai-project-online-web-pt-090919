@@ -47,9 +47,8 @@ class Game
     end
     
     def turn
-      current_player.move(@board)
-      until @board.valid_move?(input)
-        input = gets.chomp
+      until @board.valid_move?(current_player.move(@board))
+        current_player.move(@board)
       end
       @board.update(input, current_player)
     end
