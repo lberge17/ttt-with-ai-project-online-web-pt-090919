@@ -9,5 +9,9 @@ module Players
       n
     end
     
+    def best_move(board)
+      Game.WIN_COMBINATIONS
+    end
+    
   end
 end
