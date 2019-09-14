@@ -16,8 +16,8 @@ module Players
       n = nil
       if !!winning_move?(board)
         n = winning_move?(board)
-      #elsif !!block_opponent_win?(board)
-        #n = block_opponent_win(board)
+      elsif !!block_opponent_win?(board)
+        n = block_opponent_win?(board)
       elsif board.cells[4] == " "
         n = "5"
       elsif board.cells[2] == " "
@@ -49,12 +49,12 @@ module Players
       false
     end
     
-   # def block_opponent_win?(board)
-  #    winning_array = WIN_COMBINATIONS.find{|array| (board.cells[array[0]] == token && board.cells[array[1]] == token && board.cells[array[2]] == " ") || (board.cells[array[2]] == token && board.cells[array[1]] == token && board.cells[array[0]] == " ") || (board.cells[array[0]] == token && board.cells[array[2]] == token && board.cells[array[1]] == " ")
-    #  if !!winning_array
-  #      winning_array.find{|index| board.cells[index] == " "
-   #   end
-    #end
+    def block_opponent_win?(board)
+      winning_array = WIN_COMBINATIONS.find{|array| (board.cells[array[0]] == token && board.cells[array[1]] == token && board.cells[array[2]] == " ") || (board.cells[array[2]] == token && board.cells[array[1]] == token && board.cells[array[0]] == " ") || (board.cells[array[0]] == token && board.cells[array[2]] == token && board.cells[array[1]] == " ")
+      if !!winning_array
+        winning_array.find{|index| board.cells[index] == " "
+      end
+    end
     
     def other_player_token
       self.token == "X" ? "O" : "X"
