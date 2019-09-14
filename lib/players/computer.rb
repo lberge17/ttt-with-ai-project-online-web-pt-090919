@@ -3,7 +3,7 @@ module Players
     def move(board)
       sleep 1 
       n = nil
-      if
+      if 
       elsif board.cells[4] == " "
         n = "5"
       elsif board.cells[2] == " "
