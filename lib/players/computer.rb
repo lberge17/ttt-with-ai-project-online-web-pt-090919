@@ -14,10 +14,10 @@ module Players
     def move(board)
       sleep 1 
       n = nil
-      if !!winning_move?
-        n = winning_move?
-      elsif !!block_opponent_win?
-        n = block_opponent_win
+      if !!winning_move?(board)
+        n = winning_move?(board)
+      elsif !!block_opponent_win?(board)
+        n = block_opponent_win(board)
       elsif board.cells[4] == " "
         n = "5"
       elsif board.cells[2] == " "
@@ -36,7 +36,7 @@ module Players
       n
     end
     
-    def winning_move?
+    def winning_move?(board)
       WIN_COMBINATIONS.each do |array|
         if board.cells[array[0]] == self.token && board.cells[array[1]] == self.token
           return (array[2] + 1).to_s
@@ -49,7 +49,7 @@ module Players
       end
     end
     
-    def block_opponent_win?
+    def block_opponent_win?(board)
       WIN_COMBINATIONS.each do |array|
         if board.cells[array[0]] == other_player_token && board.cells[array[1]] == other_player_token
           return (array[2] + 1).to_s
