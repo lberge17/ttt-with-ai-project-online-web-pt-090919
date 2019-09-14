@@ -79,7 +79,7 @@ class Game
         game = Game.new(Players::Human.new("X"), player_2=Players::Computer.new("O"), board=Board.new)
         game.play
       elsif input =="2"
-        game = Game.new(Players::Computer.new("X"), player_2=Players::Computer.new("O"), board=Board.new)
+        game = Game.new(Players::Computer.new("X"), player_2=Players::Human.new("O"), board=Board.new)
         game.play
       else
         puts "Invalid input, please enter '1' or '2'"
