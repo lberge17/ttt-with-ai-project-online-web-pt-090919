@@ -102,11 +102,11 @@ class Game
         puts "Enter 'exit' to leave"
         input = gets.chomp
         if input == "0"
-          
+          self.computer_game
         elsif input == "1"
-          
+          self.one_player
         elsif input == "2"
-          
+          self.two_player
         elsif input == "exit"
           break
         else
