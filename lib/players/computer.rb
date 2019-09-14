@@ -23,7 +23,7 @@ module Players
     end
     
     def winning_move?
-      
+      Board.WIN_COMBINATIONS
     end
     
     def block_opponent_win?
