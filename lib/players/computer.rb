@@ -22,6 +22,16 @@ module Players
       n
     end
     
+    def winning_move?
+      
+    end
+    
+    def block_opponent_win?
+      
+    end
+    
+    def
+    
     def other_player_token
       self.token == "X" ? "O" : "X"
     end
