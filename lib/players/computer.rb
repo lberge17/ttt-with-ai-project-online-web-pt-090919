@@ -16,7 +16,6 @@ module Players
     def move(board)
       sleep 1 
       n = nil
-      binding.pry
       if !!winning_move?(board)
         n = winning_move?(board)
       elsif !!block_opponent_win?(board)
