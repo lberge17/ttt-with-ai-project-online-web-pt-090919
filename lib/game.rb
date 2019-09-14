@@ -58,6 +58,7 @@ class Game
       until over? do
         turn
         @board.display
+        sleep 1
       end
       if won?
         puts "Congratulations #{winner}!"
