@@ -107,6 +107,8 @@ class Game
           self.one_player
         elsif input == "2"
           self.two_player
+        elsif input == "wargames"
+          game = Game.new(Players::Human.new("X"), player_2=Players::Human.new("O"), board=Board.new)
         elsif input == "exit"
           break
         else
