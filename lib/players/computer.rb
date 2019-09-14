@@ -3,7 +3,8 @@ module Players
     def move(board)
       sleep 1 
       n = nil
-      if board.cells[4] == " "
+      if
+      elsif board.cells[4] == " "
         n = "5"
       elsif board.cells[2] == " "
         n = "3"
@@ -21,8 +22,8 @@ module Players
       n
     end
     
-    def best_move(board)
-      Game.WIN_COMBINATIONS
+    def other_player_token
+      if self.token
     end
     
   end
